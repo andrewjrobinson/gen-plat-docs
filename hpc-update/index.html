@@ -179,9 +179,18 @@ echo &quot;Finished: $(date)&quot;
 <p><strong>Figure</strong>: example slurm script requesting 8 cores on a single node, for 8 hours, with 8GB of memory</p>
 <h2 id="job-monitoring">Job monitoring</h2>
 <h3 id="munin">Munin</h3>
+<p>Munin is a webpage that shows graphs CPU usage over time.  It can be accessed from the following webpage:</p>
+<p><a href="http://munin-lims.latrobe.edu.au/lims-hpc.html">http://munin-lims.latrobe.edu.au/lims-hpc.html</a></p>
+<p>It is good for tracking how your job used the CPU over time however it only shows the whole node usage so 
+in some situations it is hard to tell who used what.</p>
+<p>If you click on one the graphs you can see the usage over longer time frames.</p>
 <h3 id="top">Top</h3>
+<p><em>top</em> us a unix command that shows the current usage of CPU and Memory of each process running on the current
+node.  You will need to login to the compute nodes to see your job's usage.  See the "Topic 4: Job Monitoring" 
+section in the <a href="http://andrewjrobinson.github.io/training_docs/tutorials/hpc/#topic-4-job-monitoring">HPC Workshop material</a> 
+for more details on using top.  To setup node login see <a href="https://docs.google.com/document/d/1pv_ovxs9xoGtQfXFlbM632RLW2X75aGcXJZ5DFSr6QE">LIMS-HPC Node Login Setup</a></p>
 <h3 id="is-it-correct">Is it correct?</h3>
-<p>Make sure you check your job is running correct when it starts and at regular intervals.</p></div>
+<p>Make sure you check your job is running correctly when it starts and at regular intervals.</p></div>
             
         </div>
 
