@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Genomics Platform Documentation\n\n\nTopics\n\n\n\n\nHPC Archiving and Update Slides\n: Slides to go with the following documents\n\n\nHPC Archiving\n: usage of LIMS-HPC Archiving facilities (\nSlides\n)\n\n\nHPC Updates\n: changes to LIMS-HPC usage (\nSlides\n)", 
+            "text": "Genomics Platform Documentation\n\n\nTopics\n\n\n\n\nHPC Archiving and Update Slides\n: Slides to go with the following documents\n\n\nHPC Archiving\n: usage of LIMS-HPC Archiving facilities\n\n\nHPC Updates\n: changes to LIMS-HPC usage", 
             "title": "Home"
         }, 
         {
@@ -12,7 +12,7 @@
         }, 
         {
             "location": "/#topics", 
-            "text": "HPC Archiving and Update Slides : Slides to go with the following documents  HPC Archiving : usage of LIMS-HPC Archiving facilities ( Slides )  HPC Updates : changes to LIMS-HPC usage ( Slides )", 
+            "text": "HPC Archiving and Update Slides : Slides to go with the following documents  HPC Archiving : usage of LIMS-HPC Archiving facilities  HPC Updates : changes to LIMS-HPC usage", 
             "title": "Topics"
         }, 
         {
