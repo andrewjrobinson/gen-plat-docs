@@ -1,0 +1,174 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Genomics Platform Documentation\n\n\nTopics\n\n\n\n\nHPC Archiving\n: usage of LIMS-HPC Archiving facilities\n\n\nHPC Updates\n: changes to LIMS-HPC usage", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#genomics-platform-documentation", 
+            "text": "", 
+            "title": "Genomics Platform Documentation"
+        }, 
+        {
+            "location": "/#topics", 
+            "text": "HPC Archiving : usage of LIMS-HPC Archiving facilities  HPC Updates : changes to LIMS-HPC usage", 
+            "title": "Topics"
+        }, 
+        {
+            "location": "/hpc-archive/", 
+            "text": "HPC Archiving\n\n\nThis document covers the usage of the Archiving Storage attached to LIMS-HPC.\n\n\nPurpose\n\n\nThe \nAustralian Code for the Responsible Conduct of Research\n \nrequires researchers to make use the archive storage at a research organisation (i.e. La Trobe University) and keep\nrecords about such data.  La Trobe University's policies specifically reference the Code.\n\n\nRelevant Documents\n:\n\n\n\n\nAustralian Code for the Responsible Conduct of Research\n\n\nLa Trobe University Policies\n\n\nLa Trobe University Research Data Management Policy\n\n\nLa Trobe University Research Data Retention and Disposal Policy\n\n\n\n\nGlossary\n\n\nKey terms used within this document\n\n\n\n\nProject\n: a directory of related files.  These may include multiple collections of data (i.e. multiple \n    sequencing runs) that are related.\n\n\nActive Project\n: a project that is being worked on within the last 30 days.\n\n\nInactive Project\n: a project that has ceased to be active.  This might be because of the project coming \n    to an end or being shelved for a period of time.\n\n\nMeta-data\n: information about your data.\n\n\nMeta-data file\n: In this context, a text file contained within the top level directory for each project.  The\n    purpose of this file is to store a description of the data contained within the project.\n\n\n\n\nLIMS-HPC key directories\n\n\n\n\n/home/USERNAME\n: Home directory for the user USERNAME.  No data will be stored here; only config files\n\n\n/home/group/LABGROUP\n: the directory for storing \nactive\n projects of research group LABGROUP\n\n\n/home/archive/LABGROUP\n: the directory for storing \ninactive\n projects of research group LABGROUP\n\n\n/data/genomics-archive\n: each sequencing run is stored here.  Any files within here do NOT need to be archived.  If \n    you have sequencing runs from outside providers then you can have them stored here by contacting the \n    \nGenomics Platform (genomics@latrobe.edu.au)\n  \n\n\n\n\nArchive types\n\n\nThe Archive storage on LIMS-HPC is used for storing data that is no longer being actively processed.  There are two\ngroups of archived projects: \n\n\nPublished\n\n\nData analysis that has been published (or is under review).  This data must be cleaned, compressed and have a COMPLETE\nmeta-data file.  Once the project is ready it will be \nlocked\n so that no users can add, change or delete the files within \nit.  A locked project will only be readable for researchers within the labgroup and not changeable.  A \nsupplementary\n \nsub-directory for each project is used for adding new files/information after the project is locked.  Files within here will\nalso be locked when ready.\n\n\nShelved\n\n\nFor projects that have been put on hold for the time being.  They can be brought back to the HPC storage (i.e. \n/home/group/*) when work resumes.\n\n\nMeta-data\n\n\nItems that must be included as a minimum in archived data (metadata.txt)\n\n\n\n\nContacts\n: Phone, email addresses, department of:\n\n\nPrimary\n: the researchers who created the results/performed research.\n\n\nSupervisor/lab group\n:\n\n\nCollaborators\n: Internal and external\n\n\n\n\n\n\nApprovals\n:\n\n\nIncoming\n: A list of approvals that were received by you for use of external data if any. (attach email text if \n  coming via email, best for forward the email then copy all text so it includes the from/to fields)\n\n\nOutgoing\n: A list of approvals that you have given out for other copies of this research data including contact \n  details and names of persons and for what purpose they were given.\n\n\n\n\n\n\nConfidentiality/Ethics restrictions\n:\n\n\nAre there any restrictions on the confidentiality of all or parts of this data.  Which parts if any can be given \n  out to others if a request comes from publication?\n\n\n\n\n\n\nExpiry\n:  NOTE: data should only be deleted if it has no useful purpose.  If the expiry data comes around and it's \n  still useful then a new expiry should be set\n\n\nWhat date should this data be deleted (See section 2.1.1 of r39 of the \"AUSTRALIAN CODE FOR THE RESPONSIBLE CONDUCT \n  OF RESEARCH\" for minimum time frames required).\n\n\nWho is responsible for the disposal (or extension)\n\n\nNote any challenges or allegations of research misconduct that are raised against this research.  While unresolved\n  cases remain the results MUST NOT be deleted.\n\n\n\n\n\n\nReferences\n:\n\n\nLab books and other documentation that describes the data processing and/or wet lab work associated with this data.\n\n\nPublications\n: Citation and doi/url for any publications that are a result of this data\n\n\n\n\n\n\n\n\nmetadata.txt\n: a template file to use for your projects metadata.txt\n\n\nArchive directory layout\n\n\nEach labgroup's archive directory contains two sub-directories for the Published and Shelved data.\n\n\n\n\n/home/archive/LABGROUP/pub\n: \n\n\n/home/archive/LABGROUP/shelf\n: \n\n\n\n\nLinks\n\n\nWhen using data within your project it's best practice to use \nsymbolic links\n to grab the source data from the genomics platform\narchive instead of making a copy to your project.  There are two types of \nsymbolic links\n: (1) relative and (2) absolute and are \ndiffientiated by whether you use a relative path or absolute path when creating the link.\n\n\nWhen should you use each\n?\n\n\n\n\nAbsolute\n: When linking to files or directories outside of the current project directory.  e.g. linking your nextgen sequence\n  data to your projects source data. \n\n\nmkdir 00-raw; \ncd 00-raw; \nln -s /data/genomics-archive/RUNID/Unaligned/sample1.fq.gz .\n\n\nRelative\n: When linking to files or directories inside your current project.  e.g. you might want to create a subset of your\n  samples for testing.  This would allow you to use a file regex to select the input files to your command \"\ntestset/*.fq.gz\n\"\n\n\ncd 00-raw; \nmkdir testset; \ncd testset; \nln -s ../sample2.fq.gz .\n\n\n\n\nNOTE\n: do not link between projects (See best practice below)\n\n\nCopying data\n\n\nTODO: describe how to move the data over to archive safely\n\n\nData disposal\n\n\nData must only be disposed of in accordance with the La Trobe \nResearch Data Retention and Disposal \nPolicy\n and any other relevant \npolicies.\n\n\nAdditionally, when a dataset is disposed of the project directory and metadata file must remain.  A note should be added to \nthe metadata file indicating the date, whom and reason it was deleted.  A full directory listing should be stored:\n\n\nls -lR \n listing.txt\n\n\n\n\nProject best practice\n\n\nTo help produce repeatable science and make your life easier when it comes time to archive here are a number of suggestions\nto use while working on a project.\n\n\nClean as you go\n\n\nOnce you have successfully completed a step in your analysis you should remove any files resulting from earlier failed\nanalysis.\n\n\nBetter yet, move all files from this step out of the way (i.e. to a subdirectory called 'old') and repeat the steps you used to\nachieve a successful result.  This makes sure you are able to repeat the analysis.  When finished you can remove the old files.\n\n\nMaintain metadata.txt\n\n\nCreate the metadata.txt file when you start a project and complete it as you go along.  As a minimum you should put your contact\ndetails in there and document the source (and any approvals for) data.\n\n\nDon't link between projects\n\n\nYou should resist the urge to create links from one project to another as this will result in dead links if one project is\narchived before another.  If two projects share the same data then you can apply to have the data stored in the genomics platform\narchive and link to it there.\n\n\nEach step in its own directory\n\n\nWithin each project there are commonly multiple processing steps used.  It's best practice to create a sub-directory for each\nstep in your analysis.  This helps reduce the confusion about files and makes it easier to cleanup and archive.  If you add a \nsequence number to the beginning they order correctly with \nls\n \n\n\nRead-only\n\n\nIt's a good idea to make your files read-only once they are successful to help prevent data-loss when you do a recursive delete\nin the wrong place.  NOTE: this will NOT protect you from the rm -f.\n\n\n# individual file(s)\nchmod a-w FILENAME\n\n# whole directory\nchmod a-w -R DIRECTORYNAME\n\n\n\n\nAnother helpful hint is to create a file named '0' in directories that contain valuable files and make this read-only.  This will\ncause \nrm -r ...\n to prompt before deleting it so if you accidentally try to delete the directory then this can help save you (by\npressing \nCTRL + C\n to terminate the command). \n\n\ntouch 0; chmod a-w 0;", 
+            "title": "HPC Archiving"
+        }, 
+        {
+            "location": "/hpc-archive/#hpc-archiving", 
+            "text": "This document covers the usage of the Archiving Storage attached to LIMS-HPC.", 
+            "title": "HPC Archiving"
+        }, 
+        {
+            "location": "/hpc-archive/#purpose", 
+            "text": "The  Australian Code for the Responsible Conduct of Research  \nrequires researchers to make use the archive storage at a research organisation (i.e. La Trobe University) and keep\nrecords about such data.  La Trobe University's policies specifically reference the Code.  Relevant Documents :   Australian Code for the Responsible Conduct of Research  La Trobe University Policies  La Trobe University Research Data Management Policy  La Trobe University Research Data Retention and Disposal Policy", 
+            "title": "Purpose"
+        }, 
+        {
+            "location": "/hpc-archive/#glossary", 
+            "text": "Key terms used within this document   Project : a directory of related files.  These may include multiple collections of data (i.e. multiple \n    sequencing runs) that are related.  Active Project : a project that is being worked on within the last 30 days.  Inactive Project : a project that has ceased to be active.  This might be because of the project coming \n    to an end or being shelved for a period of time.  Meta-data : information about your data.  Meta-data file : In this context, a text file contained within the top level directory for each project.  The\n    purpose of this file is to store a description of the data contained within the project.", 
+            "title": "Glossary"
+        }, 
+        {
+            "location": "/hpc-archive/#lims-hpc-key-directories", 
+            "text": "/home/USERNAME : Home directory for the user USERNAME.  No data will be stored here; only config files  /home/group/LABGROUP : the directory for storing  active  projects of research group LABGROUP  /home/archive/LABGROUP : the directory for storing  inactive  projects of research group LABGROUP  /data/genomics-archive : each sequencing run is stored here.  Any files within here do NOT need to be archived.  If \n    you have sequencing runs from outside providers then you can have them stored here by contacting the \n     Genomics Platform (genomics@latrobe.edu.au)", 
+            "title": "LIMS-HPC key directories"
+        }, 
+        {
+            "location": "/hpc-archive/#archive-types", 
+            "text": "The Archive storage on LIMS-HPC is used for storing data that is no longer being actively processed.  There are two\ngroups of archived projects:", 
+            "title": "Archive types"
+        }, 
+        {
+            "location": "/hpc-archive/#published", 
+            "text": "Data analysis that has been published (or is under review).  This data must be cleaned, compressed and have a COMPLETE\nmeta-data file.  Once the project is ready it will be  locked  so that no users can add, change or delete the files within \nit.  A locked project will only be readable for researchers within the labgroup and not changeable.  A  supplementary  \nsub-directory for each project is used for adding new files/information after the project is locked.  Files within here will\nalso be locked when ready.", 
+            "title": "Published"
+        }, 
+        {
+            "location": "/hpc-archive/#shelved", 
+            "text": "For projects that have been put on hold for the time being.  They can be brought back to the HPC storage (i.e. \n/home/group/*) when work resumes.", 
+            "title": "Shelved"
+        }, 
+        {
+            "location": "/hpc-archive/#meta-data", 
+            "text": "Items that must be included as a minimum in archived data (metadata.txt)   Contacts : Phone, email addresses, department of:  Primary : the researchers who created the results/performed research.  Supervisor/lab group :  Collaborators : Internal and external    Approvals :  Incoming : A list of approvals that were received by you for use of external data if any. (attach email text if \n  coming via email, best for forward the email then copy all text so it includes the from/to fields)  Outgoing : A list of approvals that you have given out for other copies of this research data including contact \n  details and names of persons and for what purpose they were given.    Confidentiality/Ethics restrictions :  Are there any restrictions on the confidentiality of all or parts of this data.  Which parts if any can be given \n  out to others if a request comes from publication?    Expiry :  NOTE: data should only be deleted if it has no useful purpose.  If the expiry data comes around and it's \n  still useful then a new expiry should be set  What date should this data be deleted (See section 2.1.1 of r39 of the \"AUSTRALIAN CODE FOR THE RESPONSIBLE CONDUCT \n  OF RESEARCH\" for minimum time frames required).  Who is responsible for the disposal (or extension)  Note any challenges or allegations of research misconduct that are raised against this research.  While unresolved\n  cases remain the results MUST NOT be deleted.    References :  Lab books and other documentation that describes the data processing and/or wet lab work associated with this data.  Publications : Citation and doi/url for any publications that are a result of this data     metadata.txt : a template file to use for your projects metadata.txt", 
+            "title": "Meta-data"
+        }, 
+        {
+            "location": "/hpc-archive/#archive-directory-layout", 
+            "text": "Each labgroup's archive directory contains two sub-directories for the Published and Shelved data.   /home/archive/LABGROUP/pub :   /home/archive/LABGROUP/shelf :", 
+            "title": "Archive directory layout"
+        }, 
+        {
+            "location": "/hpc-archive/#links", 
+            "text": "When using data within your project it's best practice to use  symbolic links  to grab the source data from the genomics platform\narchive instead of making a copy to your project.  There are two types of  symbolic links : (1) relative and (2) absolute and are \ndiffientiated by whether you use a relative path or absolute path when creating the link.  When should you use each ?   Absolute : When linking to files or directories outside of the current project directory.  e.g. linking your nextgen sequence\n  data to your projects source data.   mkdir 00-raw; \ncd 00-raw; \nln -s /data/genomics-archive/RUNID/Unaligned/sample1.fq.gz .  Relative : When linking to files or directories inside your current project.  e.g. you might want to create a subset of your\n  samples for testing.  This would allow you to use a file regex to select the input files to your command \" testset/*.fq.gz \"  cd 00-raw; \nmkdir testset; \ncd testset; \nln -s ../sample2.fq.gz .   NOTE : do not link between projects (See best practice below)", 
+            "title": "Links"
+        }, 
+        {
+            "location": "/hpc-archive/#copying-data", 
+            "text": "TODO: describe how to move the data over to archive safely", 
+            "title": "Copying data"
+        }, 
+        {
+            "location": "/hpc-archive/#data-disposal", 
+            "text": "Data must only be disposed of in accordance with the La Trobe  Research Data Retention and Disposal \nPolicy  and any other relevant \npolicies.  Additionally, when a dataset is disposed of the project directory and metadata file must remain.  A note should be added to \nthe metadata file indicating the date, whom and reason it was deleted.  A full directory listing should be stored:  ls -lR   listing.txt", 
+            "title": "Data disposal"
+        }, 
+        {
+            "location": "/hpc-archive/#project-best-practice", 
+            "text": "To help produce repeatable science and make your life easier when it comes time to archive here are a number of suggestions\nto use while working on a project.", 
+            "title": "Project best practice"
+        }, 
+        {
+            "location": "/hpc-archive/#clean-as-you-go", 
+            "text": "Once you have successfully completed a step in your analysis you should remove any files resulting from earlier failed\nanalysis.  Better yet, move all files from this step out of the way (i.e. to a subdirectory called 'old') and repeat the steps you used to\nachieve a successful result.  This makes sure you are able to repeat the analysis.  When finished you can remove the old files.", 
+            "title": "Clean as you go"
+        }, 
+        {
+            "location": "/hpc-archive/#maintain-metadatatxt", 
+            "text": "Create the metadata.txt file when you start a project and complete it as you go along.  As a minimum you should put your contact\ndetails in there and document the source (and any approvals for) data.", 
+            "title": "Maintain metadata.txt"
+        }, 
+        {
+            "location": "/hpc-archive/#dont-link-between-projects", 
+            "text": "You should resist the urge to create links from one project to another as this will result in dead links if one project is\narchived before another.  If two projects share the same data then you can apply to have the data stored in the genomics platform\narchive and link to it there.", 
+            "title": "Don't link between projects"
+        }, 
+        {
+            "location": "/hpc-archive/#each-step-in-its-own-directory", 
+            "text": "Within each project there are commonly multiple processing steps used.  It's best practice to create a sub-directory for each\nstep in your analysis.  This helps reduce the confusion about files and makes it easier to cleanup and archive.  If you add a \nsequence number to the beginning they order correctly with  ls", 
+            "title": "Each step in its own directory"
+        }, 
+        {
+            "location": "/hpc-archive/#read-only", 
+            "text": "It's a good idea to make your files read-only once they are successful to help prevent data-loss when you do a recursive delete\nin the wrong place.  NOTE: this will NOT protect you from the rm -f.  # individual file(s)\nchmod a-w FILENAME\n\n# whole directory\nchmod a-w -R DIRECTORYNAME  Another helpful hint is to create a file named '0' in directories that contain valuable files and make this read-only.  This will\ncause  rm -r ...  to prompt before deleting it so if you accidentally try to delete the directory then this can help save you (by\npressing  CTRL + C  to terminate the command).   touch 0; chmod a-w 0;", 
+            "title": "Read-only"
+        }, 
+        {
+            "location": "/hpc-update/", 
+            "text": "HPC Updates\n\n\nThis document covers changes to the way we use LIMS-HPC\n\n\nGroup directories\n\n\nThere are group directories for every user on the system.  They are located in the /home/group/LABGROUP \nwhere LABGROUP is usually the labhead's surname followed by 'lab'  e.g. /home/group/whelanlab.  Each lab \ngroup is restricted to only users who are in the labgroup.\n\n\nNo home dir data\n\n\nNo data should be stored or processed within your home directory (e.g. /home/USERNAME).  While it works, \nit makes it difficult to cleanup/archive and for you to get help debugging your work.\n\n\nFair usage\n\n\nPlease be fair and not request more that 32 cores.\n\n\nPartitions\n\n\n\n\n8hour\n: For small jobs requiring less than 8 hours of time to compute.  You should not use more than \n  8 cores.  It has access to all nodes of the HPC so should always be able to run a job (unless it's \n  really busy)\n\n\nCompute\n: Regular jobs up to 7 days of compute.  It has access to most nodes.\n\n\nLong\n: For jobs that are going to take a long time to complete; maximum is 200 days\n\n\nBigmem\n: For jobs that require more than 128GB of memory (and hence need node 1)\n\n\n\n\nTime extensions\n\n\nI can extend your jobs time setting if it looks like it won't finish in time up to 2x the maximum for its \nqueue.  The exception to this is Node 1 which I will not extend as it is a specialist node and needs to be \navailable for bigmem jobs.  To get this, please email your job number and expected time it will require to \nGenomics Platform \ngenomics@latrobe.edu.au\n\n\nNTasks\n\n\nThe \n--ntasks\n option regularly gets used instead of \n--cpus-per-task\n.  If you are running programs one \nat a time then you should be using \n--cpus-per-task\n.  While it may produce the same result, the \nconsequence of using \n--ntasks\n is that SLURM could give you some CPUs on one node and the rest on another\nwhich your scripts are not likely to be able to support.\n\n\n#!/bin/bash\n#SBATCH --share\n#SBATCH --ntasks=1\n#SBATCH --cpus-per-task=8\n#SBATCH --mem-per-cpu=1024\n#SBATCH --partition=8hour\n#SBATCH --time=08:00\n\necho \nStarting: $(date)\n\n\nsome-awesome-program --threads=8 input.fa \n output.txt\n\necho \nFinished: $(date)\n\n\n\n\n\nFigure\n: example slurm script requesting 8 cores on a single node, for 8 hours, with 8GB of memory\n\n\nJob monitoring\n\n\nMunin\n\n\nTop\n\n\nIs it correct?\n\n\nMake sure you check your job is running correct when it starts and at regular intervals.", 
+            "title": "HPC Updates"
+        }, 
+        {
+            "location": "/hpc-update/#hpc-updates", 
+            "text": "This document covers changes to the way we use LIMS-HPC", 
+            "title": "HPC Updates"
+        }, 
+        {
+            "location": "/hpc-update/#group-directories", 
+            "text": "There are group directories for every user on the system.  They are located in the /home/group/LABGROUP \nwhere LABGROUP is usually the labhead's surname followed by 'lab'  e.g. /home/group/whelanlab.  Each lab \ngroup is restricted to only users who are in the labgroup.", 
+            "title": "Group directories"
+        }, 
+        {
+            "location": "/hpc-update/#no-home-dir-data", 
+            "text": "No data should be stored or processed within your home directory (e.g. /home/USERNAME).  While it works, \nit makes it difficult to cleanup/archive and for you to get help debugging your work.", 
+            "title": "No home dir data"
+        }, 
+        {
+            "location": "/hpc-update/#fair-usage", 
+            "text": "Please be fair and not request more that 32 cores.", 
+            "title": "Fair usage"
+        }, 
+        {
+            "location": "/hpc-update/#partitions", 
+            "text": "8hour : For small jobs requiring less than 8 hours of time to compute.  You should not use more than \n  8 cores.  It has access to all nodes of the HPC so should always be able to run a job (unless it's \n  really busy)  Compute : Regular jobs up to 7 days of compute.  It has access to most nodes.  Long : For jobs that are going to take a long time to complete; maximum is 200 days  Bigmem : For jobs that require more than 128GB of memory (and hence need node 1)", 
+            "title": "Partitions"
+        }, 
+        {
+            "location": "/hpc-update/#time-extensions", 
+            "text": "I can extend your jobs time setting if it looks like it won't finish in time up to 2x the maximum for its \nqueue.  The exception to this is Node 1 which I will not extend as it is a specialist node and needs to be \navailable for bigmem jobs.  To get this, please email your job number and expected time it will require to \nGenomics Platform  genomics@latrobe.edu.au", 
+            "title": "Time extensions"
+        }, 
+        {
+            "location": "/hpc-update/#ntasks", 
+            "text": "The  --ntasks  option regularly gets used instead of  --cpus-per-task .  If you are running programs one \nat a time then you should be using  --cpus-per-task .  While it may produce the same result, the \nconsequence of using  --ntasks  is that SLURM could give you some CPUs on one node and the rest on another\nwhich your scripts are not likely to be able to support.  #!/bin/bash\n#SBATCH --share\n#SBATCH --ntasks=1\n#SBATCH --cpus-per-task=8\n#SBATCH --mem-per-cpu=1024\n#SBATCH --partition=8hour\n#SBATCH --time=08:00\n\necho  Starting: $(date) \n\nsome-awesome-program --threads=8 input.fa   output.txt\n\necho  Finished: $(date)   Figure : example slurm script requesting 8 cores on a single node, for 8 hours, with 8GB of memory", 
+            "title": "NTasks"
+        }, 
+        {
+            "location": "/hpc-update/#job-monitoring", 
+            "text": "", 
+            "title": "Job monitoring"
+        }, 
+        {
+            "location": "/hpc-update/#munin", 
+            "text": "", 
+            "title": "Munin"
+        }, 
+        {
+            "location": "/hpc-update/#top", 
+            "text": "", 
+            "title": "Top"
+        }, 
+        {
+            "location": "/hpc-update/#is-it-correct", 
+            "text": "Make sure you check your job is running correct when it starts and at regular intervals.", 
+            "title": "Is it correct?"
+        }
+    ]
+}

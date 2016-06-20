@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>HPC Archiving - Genomics Platform Docs</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../includes/media/plain-slides.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">Genomics Platform Docs</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">HPC Archiving</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../hpc-update/">HPC Updates</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="..">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../hpc-update/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#hpc-archiving">HPC Archiving</a></li>
+        
+            <li><a href="#purpose">Purpose</a></li>
+        
+            <li><a href="#glossary">Glossary</a></li>
+        
+            <li><a href="#archive-types">Archive types</a></li>
+        
+            <li><a href="#meta-data">Meta-data</a></li>
+        
+            <li><a href="#archive-directory-layout">Archive directory layout</a></li>
+        
+            <li><a href="#copying-data">Copying data</a></li>
+        
+            <li><a href="#data-disposal">Data disposal</a></li>
+        
+            <li><a href="#project-best-practice">Project best practice</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="hpc-archiving">HPC Archiving</h1>
+<p>This document covers the usage of the Archiving Storage attached to LIMS-HPC.</p>
+<h2 id="purpose">Purpose</h2>
+<p>The <a href="https://www.nhmrc.gov.au/guidelines-publications/r39">Australian Code for the Responsible Conduct of Research</a> 
+requires researchers to make use the archive storage at a research organisation (i.e. La Trobe University) and keep
+records about such data.  La Trobe University's policies specifically reference the Code.</p>
+<p><strong>Relevant Documents</strong>:</p>
+<ul>
+<li><a href="https://www.nhmrc.gov.au/guidelines-publications/r39">Australian Code for the Responsible Conduct of Research</a></li>
+<li><a href="http://www.latrobe.edu.au/policy/all-policies">La Trobe University Policies</a></li>
+<li><a href="http://www.latrobe.edu.au/policy/documents/research-data-management-policy.pdf">La Trobe University Research Data Management Policy</a></li>
+<li><a href="http://www.latrobe.edu.au/policy/documents/research-data-retention-and-disposal-policy.pdf">La Trobe University Research Data Retention and Disposal Policy</a></li>
+</ul>
+<h2 id="glossary">Glossary</h2>
+<p>Key terms used within this document</p>
+<ul>
+<li><strong>Project</strong>: a directory of related files.  These may include multiple collections of data (i.e. multiple 
+    sequencing runs) that are related.</li>
+<li><strong>Active Project</strong>: a project that is being worked on within the last 30 days.</li>
+<li><strong>Inactive Project</strong>: a project that has ceased to be active.  This might be because of the project coming 
+    to an end or being shelved for a period of time.</li>
+<li><strong>Meta-data</strong>: information about your data.</li>
+<li><strong>Meta-data file</strong>: In this context, a text file contained within the top level directory for each project.  The
+    purpose of this file is to store a description of the data contained within the project.</li>
+</ul>
+<h3 id="lims-hpc-key-directories">LIMS-HPC key directories</h3>
+<ul>
+<li><strong>/home/USERNAME</strong>: Home directory for the user USERNAME.  No data will be stored here; only config files</li>
+<li><strong>/home/group/LABGROUP</strong>: the directory for storing <em>active</em> projects of research group LABGROUP</li>
+<li><strong>/home/archive/LABGROUP</strong>: the directory for storing <em>inactive</em> projects of research group LABGROUP</li>
+<li><strong>/data/genomics-archive</strong>: each sequencing run is stored here.  Any files within here do NOT need to be archived.  If 
+    you have sequencing runs from outside providers then you can have them stored here by contacting the 
+    <a href="mailto:genomics@latrobe.edu.au">Genomics Platform (genomics@latrobe.edu.au)</a>  </li>
+</ul>
+<h2 id="archive-types">Archive types</h2>
+<p>The Archive storage on LIMS-HPC is used for storing data that is no longer being actively processed.  There are two
+groups of archived projects: </p>
+<h3 id="published">Published</h3>
+<p>Data analysis that has been published (or is under review).  This data must be cleaned, compressed and have a COMPLETE
+meta-data file.  Once the project is ready it will be <em>locked</em> so that no users can add, change or delete the files within 
+it.  A locked project will only be readable for researchers within the labgroup and not changeable.  A <em>supplementary</em> 
+sub-directory for each project is used for adding new files/information after the project is locked.  Files within here will
+also be locked when ready.</p>
+<h3 id="shelved">Shelved</h3>
+<p>For projects that have been put on hold for the time being.  They can be brought back to the HPC storage (i.e. 
+/home/group/*) when work resumes.</p>
+<h2 id="meta-data">Meta-data</h2>
+<p>Items that must be included as a minimum in archived data (metadata.txt)</p>
+<ul>
+<li><strong>Contacts</strong>: Phone, email addresses, department of:<ul>
+<li><em>Primary</em>: the researchers who created the results/performed research.</li>
+<li><em>Supervisor/lab group</em>:</li>
+<li><em>Collaborators</em>: Internal and external</li>
+</ul>
+</li>
+<li><strong>Approvals</strong>:<ul>
+<li><em>Incoming</em>: A list of approvals that were received by you for use of external data if any. (attach email text if 
+  coming via email, best for forward the email then copy all text so it includes the from/to fields)</li>
+<li><em>Outgoing</em>: A list of approvals that you have given out for other copies of this research data including contact 
+  details and names of persons and for what purpose they were given.</li>
+</ul>
+</li>
+<li><strong>Confidentiality/Ethics restrictions</strong>:<ul>
+<li>Are there any restrictions on the confidentiality of all or parts of this data.  Which parts if any can be given 
+  out to others if a request comes from publication?</li>
+</ul>
+</li>
+<li><strong>Expiry</strong>:  NOTE: data should only be deleted if it has no useful purpose.  If the expiry data comes around and it's 
+  still useful then a new expiry should be set<ul>
+<li>What date should this data be deleted (See section 2.1.1 of r39 of the "AUSTRALIAN CODE FOR THE RESPONSIBLE CONDUCT 
+  OF RESEARCH" for minimum time frames required).</li>
+<li>Who is responsible for the disposal (or extension)</li>
+<li>Note any challenges or allegations of research misconduct that are raised against this research.  While unresolved
+  cases remain the results MUST NOT be deleted.</li>
+</ul>
+</li>
+<li><strong>References</strong>:<ul>
+<li>Lab books and other documentation that describes the data processing and/or wet lab work associated with this data.</li>
+<li><em>Publications</em>: Citation and doi/url for any publications that are a result of this data</li>
+</ul>
+</li>
+</ul>
+<p><strong><a href="./metadata.txt">metadata.txt</a></strong>: a template file to use for your projects metadata.txt</p>
+<h2 id="archive-directory-layout">Archive directory layout</h2>
+<p>Each labgroup's archive directory contains two sub-directories for the Published and Shelved data.</p>
+<ul>
+<li><strong>/home/archive/LABGROUP/pub</strong>: </li>
+<li><strong>/home/archive/LABGROUP/shelf</strong>: </li>
+</ul>
+<h3 id="links">Links</h3>
+<p>When using data within your project it's best practice to use <em>symbolic links</em> to grab the source data from the genomics platform
+archive instead of making a copy to your project.  There are two types of <em>symbolic links</em>: (1) relative and (2) absolute and are 
+diffientiated by whether you use a relative path or absolute path when creating the link.</p>
+<p><strong>When should you use each</strong>?</p>
+<ul>
+<li><strong>Absolute</strong>: When linking to files or directories outside of the current project directory.  e.g. linking your nextgen sequence
+  data to your projects source data. </li>
+<li><pre>mkdir 00-raw; 
+cd 00-raw; 
+ln -s /data/genomics-archive/RUNID/Unaligned/sample1.fq.gz .</pre></li>
+<li><strong>Relative</strong>: When linking to files or directories inside your current project.  e.g. you might want to create a subset of your
+  samples for testing.  This would allow you to use a file regex to select the input files to your command "<em>testset/*.fq.gz</em>"</li>
+<li><pre>cd 00-raw; 
+mkdir testset; 
+cd testset; 
+ln -s ../sample2.fq.gz .</pre></li>
+</ul>
+<p><strong>NOTE</strong>: do not link between projects (See best practice below)</p>
+<h2 id="copying-data">Copying data</h2>
+<p>TODO: describe how to move the data over to archive safely</p>
+<h2 id="data-disposal">Data disposal</h2>
+<p>Data must only be disposed of in accordance with the La Trobe <a href="http://www.latrobe.edu.au/policy/documents/research-data-retention-and-disposal-policy.pdf">Research Data Retention and Disposal 
+Policy</a> and any other relevant 
+policies.</p>
+<p>Additionally, when a dataset is disposed of the project directory and metadata file must remain.  A note should be added to 
+the metadata file indicating the date, whom and reason it was deleted.  A full directory listing should be stored:</p>
+<pre><code class="sh">ls -lR &gt;&gt; listing.txt
+</code></pre>
+
+<h2 id="project-best-practice">Project best practice</h2>
+<p>To help produce repeatable science and make your life easier when it comes time to archive here are a number of suggestions
+to use while working on a project.</p>
+<h3 id="clean-as-you-go">Clean as you go</h3>
+<p>Once you have successfully completed a step in your analysis you should remove any files resulting from earlier failed
+analysis.</p>
+<p>Better yet, move all files from this step out of the way (i.e. to a subdirectory called 'old') and repeat the steps you used to
+achieve a successful result.  This makes sure you are able to repeat the analysis.  When finished you can remove the old files.</p>
+<h3 id="maintain-metadatatxt">Maintain metadata.txt</h3>
+<p>Create the metadata.txt file when you start a project and complete it as you go along.  As a minimum you should put your contact
+details in there and document the source (and any approvals for) data.</p>
+<h3 id="dont-link-between-projects">Don't link between projects</h3>
+<p>You should resist the urge to create links from one project to another as this will result in dead links if one project is
+archived before another.  If two projects share the same data then you can apply to have the data stored in the genomics platform
+archive and link to it there.</p>
+<h3 id="each-step-in-its-own-directory">Each step in its own directory</h3>
+<p>Within each project there are commonly multiple processing steps used.  It's best practice to create a sub-directory for each
+step in your analysis.  This helps reduce the confusion about files and makes it easier to cleanup and archive.  If you add a 
+sequence number to the beginning they order correctly with <em>ls</em> </p>
+<h3 id="read-only">Read-only</h3>
+<p>It's a good idea to make your files read-only once they are successful to help prevent data-loss when you do a recursive delete
+in the wrong place.  NOTE: this will NOT protect you from the rm -f.</p>
+<pre><code class="sh"># individual file(s)
+chmod a-w FILENAME
+
+# whole directory
+chmod a-w -R DIRECTORYNAME
+</code></pre>
+
+<p>Another helpful hint is to create a file named '0' in directories that contain valuable files and make this read-only.  This will
+cause <em>rm -r ...</em> to prompt before deleting it so if you accidentally try to delete the directory then this can help save you (by
+pressing <em>CTRL + C</em> to terminate the command). </p>
+<pre><code class="sh">touch 0; chmod a-w 0;
+</code></pre></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
