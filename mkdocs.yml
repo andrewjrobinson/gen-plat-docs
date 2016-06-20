@@ -1,1 +1,14 @@
 site_name: Genomics Platform Docs
+pages:
+- 'Home': 'index.md'
+- 'Documentation':
+  - 'HPC Archiving': 'hpc-archive/index.md'
+  - 'HPC Updates': 'hpc-update/index.md'
+extra_templates: [
+]
+markdown_extensions: [
+  'markdown_include.include',
+  'showable',
+  'markdown.extensions.fenced_code',
+#  'environment',
+]

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Slides - Introduction to HPC Workshop</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url(../../includes/media/plain-slides.css);
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, title
+
+.header[
+.header-left[<img height="70px" src="http://www.latrobe.edu.au/__data/assets/image/0011/545987/logo.png"/>]
+]
+
+# HPC Archiving &amp; Updates
+
+.footer[
+.footer-left[<img height="120px" class="footer-img" src="../../includes/media/genomics-web.png"/><span class="footer-img-text">www.latrobe.edu.au/genomics</span>]
+]
+
+???
+
+Split into two sections:
+
+1. new archive storage
+2. changes to HPC usage
+
+---
+
+class: center, middle, title
+
+.header[
+.header-left[<img height="70px" src="http://www.latrobe.edu.au/__data/assets/image/0011/545987/logo.png"/>]
+]
+
+# 1) HPC Archiving
+
+.footer[
+.footer-left[<img height="120px" class="footer-img" src="../../includes/media/genomics-web.png"/><span class="footer-img-text">www.latrobe.edu.au/genomics</span>]
+]
+
+???
+
+**p**: toggles **presenter** mode
+
+**c**: creates a **clone** for dual screen
+
+LETS Get excited about Archiving
+
+---
+# Objectives
+
+1. Archive purposes
+2. Meta-data
+3. Archive process
+4. Data disposal
+5. Best practices
+
+???
+
+---
+# Notes
+
+.giant-url1[goo.gl/05DEj7]
+
+<img height="400px" src="../../includes/media/genomics-platform-docs.png"/>
+
+---
+# Background
+
+* 50TB computational full
+* 50TB archive added
+
+???
+
+Existing 50TB was designed for **computational** use.  That is, fast and shared between the nodes.
+
+The existing 50TB of **computational** storage on HPC is **full**.  
+
+It was never planned to be for **archiving**
+
+After much negotiation and delays, ICT have finally given us a **50TB archive**
+
+---
+# Archive purposes
+
+* Shelved
+* Published
+
+**NOT**
+
+* Computational storage
+
+???
+
+Two purposes:
+* **Shelved**: projects you are **not actively** working on.  Allows you to free up space 
+  you are not actively using for other users.  Still **must be neat**
+* **Published**: **long term storage** for the minimum requirements for publication.  I.e.
+  allows you to meet requirements for publication (and LTU Policy)
+
+**NOT**
+
+* **Computation** storage: you should copy it back to HPC (group directories) before using it again.
+
+---
+# Meta-data
+
+* Contacts
+* Approvals
+* Confidentiality/Ethics
+* Expiry
+* References
+
+???
+
+---
+# What to keep
+
+
+
+
+---
+# Archive process
+
+* *rsync*/*mv*
+* metadata.txt
+* 
+
+???
+
+
+
+---
+# Data disposal
+
+* Minimum time
+
+???
+
+Might seem **strange** to talk about disposal on an archive but need to define how long
+it needs to be kept.
+
+---
+# Best practices
+
+*1 step per directory*
+
+e.g.
+
+* PROJECTNAME/
+	* 00-data/
+	* 01-step1/
+	* ...
+	* 0N-stepN/
+
+???
+
+---
+# Best practices
+
+*Clean as you go*
+
+???
+
+When step is successful, **cleanup** and run from scratch.
+
+**cleanup** == move to old/ directory and delete when re-run is successful
+
+---
+# Best practices
+
+*Maintain metadata.txt*
+
+???
+
+Safe yourself time and problems later by updating the metadata.txt file as you go.
+Very important to document sources of input data and approvals to use it.
+
+---
+# Best practices
+
+*Don't link between projects*
+
+???
+
+Absolute to raw data archive and relative within project.
+
+---
+# Best practices
+
+*Read-only*
+
+```
+# individual file(s)
+chmod a-w FILENAME
+```
+
+```
+# whole directory
+chmod a-w -R DIRECTORYNAME
+```
+
+???
+
+---
+# Best practices
+
+*The '0' file*
+
+```
+touch 0; chmod a-w 0;
+```
+
+???
+
+---
+# Take away
+
+* Documented!
+* Computational/Archive
+* Safe
+* Clean
+
+---
+
+class: center, middle, title
+
+.header[
+.header-left[<img height="70px" src="http://www.latrobe.edu.au/__data/assets/image/0011/545987/logo.png"/>]
+]
+
+# 2) HPC Updates
+
+.footer[
+.footer-left[<img height="120px" class="footer-img" src="../../includes/media/genomics-web.png"/><span class="footer-img-text">www.latrobe.edu.au/genomics</span>]
+]
+
+???
+
+---
+# Objectives
+
+1. Group directories
+2. Fair usage
+3. Partitions
+4. NTasks
+5. Job Monitoring
+6. Future
+
+---
+# Group directories
+
+* Everyone has LABGROUP
+* Not home directory
+
+```
+/home/group/LABGROUP
+```
+
+---
+# Fair usage
+
+* &lt;=32 cores (2 nodes)
+
+???
+
+
+
+---
+# Partitions
+
+* Partitions
+	* 8hour (&lt;=8 hours)
+	* compute (&lt;=7 days)
+	* long  (&lt;=200 days)
+* Extensions
+
+???
+
+Extensions within limits
+
+
+---
+# NTasks
+
+* Use --cpus-per-task
+
+???
+
+**--ntasks** is for running parallel jobs (not multi-core jobs).  
+
+Use --cpus-per-task for multi-core jobs.
+
+---
+# Job Monitoring
+
+* Is it correct?
+	* Munin (Graphs)
+	* Top (Table)
+
+
+???
+
+**Munin** produces **graphs** of CPU usage over time for the **whole node**.  I.e. gives history
+
+**Top** produces a table of **current** CPU/Mem usage **per process**.  I.e. more detail  
+
+---
+# Future
+
+* More nodes
+* Intersect HPC
+
+???
+
+* ICT offered two new nodes which should come online soon
+* Intersect HPC: La Trobe's main HPC can be used for Genomics however projects are limited to 80GB (unless you are granted more)
+
+---
+# Done
+
+* Questions?
+
+
+    </textarea>
+<!-- ---------------- END OF CONTENT --------------- -->
+
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+    
+    
+<script>
+    $(document).ready(function(){
+        $("#showablelink2").click(function(){
+            $("#showable2").toggleClass("showable-hidden");
+            if ($("#showable2").hasClass("showable-hidden")) {
+                $("#showablelink2").text("More");
+            } else {
+                $("#showablelink2").text("Less");
+            }
+            return false;
+        });
+    });
+    $(document).ready(function(){
+        $("#showablelink1").click(function(){
+            $("#showable1").toggleClass("showable-hidden");
+            return false;
+        });
+    });
+    $(document).ready(function(){
+        $("#showablelink3").click(function(){
+            $("#showable3").toggleClass("showable-hidden");
+            return false;
+        });
+    });
+    </script>
+  </body>
+</html>

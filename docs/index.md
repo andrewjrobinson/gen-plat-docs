@@ -1,17 +1,7 @@
-# Welcome to MkDocs
+# Genomics Platform Documentation
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+## Topics
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+* **[HPC Archiving and Update Slides](hpc-archive/slides.html)**: Slides to go with the following documents
+* **[HPC Archiving](hpc-archive)**: usage of LIMS-HPC Archiving facilities ([Slides](slides.html))
+* **[HPC Updates](hpc-update)**: changes to LIMS-HPC usage ([Slides](hpc-update/slides.html))

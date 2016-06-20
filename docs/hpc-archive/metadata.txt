@@ -1,0 +1,19 @@
+Items that must be included as a minimum in archived data (metadata.txt)
+
+Contacts: Phone, email addresses, department of:
+Primary: the researchers who created the results/performed research.
+Supervisor/lab group:
+Collaborators: Internal and external
+Approvals:
+Incoming: A list of approvals that were received by you for use of external data if any. (attach email text if coming via email, best for forward the email then copy all text so it includes the from/to fields)
+Outgoing: A list of approvals that you have given out for other copies of this research data including contact details and names of persons and for what purpose they were given.
+Confidentiality/Ethics restrictions:
+Are there any restrictions on the confidentiality of all or parts of this data.  Which parts if any can be given out to others if a request comes from publication?
+Expiry:
+What date should this data be deleted (See section 2.1.1 of r39 of the “AUSTRALIAN CODE FOR THE RESPONSIBLE CONDUCT OF RESEARCH”) for timeframes required.
+Who is responsible for the disposal
+Note any challenges or allegations of research misconduct that are raised against this research.
+References:
+Labbooks and other documentation that describes the data processing and/or wet lab work associated with this data.
+Publications:
+Citation and doi/url for any publications that are a result of this data
