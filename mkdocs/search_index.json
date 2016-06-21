@@ -169,6 +169,21 @@
             "location": "/hpc-update/#is-it-correct", 
             "text": "Make sure you check your job is running correctly when it starts and at regular intervals.", 
             "title": "Is it correct?"
+        }, 
+        {
+            "location": "/materials/", 
+            "text": "Supporting materials for workshops\n\n\nCLC Genomics\n\n\n\n\nSlides 1\n\n\nSlides 2", 
+            "title": "Support files"
+        }, 
+        {
+            "location": "/materials/#supporting-materials-for-workshops", 
+            "text": "", 
+            "title": "Supporting materials for workshops"
+        }, 
+        {
+            "location": "/materials/#clc-genomics", 
+            "text": "Slides 1  Slides 2", 
+            "title": "CLC Genomics"
         }
     ]
 }

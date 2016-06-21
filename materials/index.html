@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>HPC Updates - Genomics Platform Docs</title>
+	<title>Support files - Genomics Platform Docs</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -60,7 +60,7 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
@@ -71,8 +71,8 @@
 
                         
                             
-<li class="active">
-    <a href="./">HPC Updates</a>
+<li >
+    <a href="../hpc-update/">HPC Updates</a>
 </li>
 
                         
@@ -81,8 +81,8 @@
                 
                 
                 
-                    <li >
-                        <a href="../materials/">Support files</a>
+                    <li class="active">
+                        <a href="./">Support files</a>
                     </li>
                 
                 
@@ -97,12 +97,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../hpc-archive/">
+                        <a rel="next" href="../hpc-update/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li >
-                        <a rel="prev" href="../materials/">
+                    <li class="disabled">
+                        <a rel="prev" >
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -118,85 +118,21 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#hpc-updates">HPC Updates</a></li>
+        <li class="main active"><a href="#supporting-materials-for-workshops">Supporting materials for workshops</a></li>
         
-            <li><a href="#group-directories">Group directories</a></li>
-        
-            <li><a href="#no-home-dir-data">No home dir data</a></li>
-        
-            <li><a href="#fair-usage">Fair usage</a></li>
-        
-            <li><a href="#partitions">Partitions</a></li>
-        
-            <li><a href="#ntasks">NTasks</a></li>
-        
-            <li><a href="#job-monitoring">Job monitoring</a></li>
+            <li><a href="#clc-genomics">CLC Genomics</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="hpc-updates">HPC Updates</h1>
-<p>This document covers changes to the way we use LIMS-HPC</p>
-<h2 id="group-directories">Group directories</h2>
-<p>There are group directories for every user on the system.  They are located in the /home/group/LABGROUP 
-where LABGROUP is usually the labhead's surname followed by 'lab'  e.g. /home/group/whelanlab.  Each lab 
-group is restricted to only users who are in the labgroup.</p>
-<h2 id="no-home-dir-data">No home dir data</h2>
-<p>No data should be stored or processed within your home directory (e.g. /home/USERNAME).  While it works, 
-it makes it difficult to cleanup/archive and for you to get help debugging your work.</p>
-<h2 id="fair-usage">Fair usage</h2>
-<p>Please be fair and not request more that 32 cores.</p>
-<h2 id="partitions">Partitions</h2>
+<h1 id="supporting-materials-for-workshops">Supporting materials for workshops</h1>
+<h2 id="clc-genomics">CLC Genomics</h2>
 <ul>
-<li><strong>8hour</strong>: For small jobs requiring less than 8 hours of time to compute.  You should not use more than 
-  8 cores.  It has access to all nodes of the HPC so should always be able to run a job (unless it's 
-  really busy)</li>
-<li><strong>Compute</strong>: Regular jobs up to 7 days of compute.  It has access to most nodes.</li>
-<li><strong>Long</strong>: For jobs that are going to take a long time to complete; maximum is 200 days</li>
-<li><strong>Bigmem</strong>: For jobs that require more than 128GB of memory (and hence need node 1)</li>
-</ul>
-<h3 id="time-extensions">Time extensions</h3>
-<p>I can extend your jobs time setting if it looks like it won't finish in time up to 2x the maximum for its 
-queue.  The exception to this is Node 1 which I will not extend as it is a specialist node and needs to be 
-available for bigmem jobs.  To get this, please email your job number and expected time it will require to 
-Genomics Platform <a href="mailto:genomics@latrobe.edu.au">genomics@latrobe.edu.au</a></p>
-<h2 id="ntasks">NTasks</h2>
-<p>The <em>--ntasks</em> option regularly gets used instead of <em>--cpus-per-task</em>.  If you are running programs one 
-at a time then you should be using <em>--cpus-per-task</em>.  While it may produce the same result, the 
-consequence of using <em>--ntasks</em> is that SLURM could give you some CPUs on one node and the rest on another
-which your scripts are not likely to be able to support.</p>
-<pre><code class="sh">#!/bin/bash
-#SBATCH --share
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
-#SBATCH --mem-per-cpu=1024
-#SBATCH --partition=8hour
-#SBATCH --time=08:00
-
-echo &quot;Starting: $(date)&quot;
-
-some-awesome-program --threads=8 input.fa &gt; output.txt
-
-echo &quot;Finished: $(date)&quot;
-</code></pre>
-
-<p><strong>Figure</strong>: example slurm script requesting 8 cores on a single node, for 8 hours, with 8GB of memory</p>
-<h2 id="job-monitoring">Job monitoring</h2>
-<h3 id="munin">Munin</h3>
-<p>Munin is a webpage that shows graphs CPU usage over time.  It can be accessed from the following webpage:</p>
-<p><a href="http://munin-lims.latrobe.edu.au/lims-hpc.html">http://munin-lims.latrobe.edu.au/lims-hpc.html</a></p>
-<p>It is good for tracking how your job used the CPU over time however it only shows the whole node usage so 
-in some situations it is hard to tell who used what.</p>
-<p>If you click on one the graphs you can see the usage over longer time frames.</p>
-<h3 id="top">Top</h3>
-<p><em>top</em> us a unix command that shows the current usage of CPU and Memory of each process running on the current
-node.  You will need to login to the compute nodes to see your job's usage.  See the "Topic 4: Job Monitoring" 
-section in the <a href="http://andrewjrobinson.github.io/training_docs/tutorials/hpc/#topic-4-job-monitoring">HPC Workshop material</a> 
-for more details on using top.  To setup node login see <a href="https://docs.google.com/document/d/1pv_ovxs9xoGtQfXFlbM632RLW2X75aGcXJZ5DFSr6QE">LIMS-HPC Node Login Setup</a></p>
-<h3 id="is-it-correct">Is it correct?</h3>
-<p>Make sure you check your job is running correctly when it starts and at regular intervals.</p></div>
+<li><a href="./media/002_GWB_v6_De_Novo-PA.pptx">Slides 1</a></li>
+<li><a href="./media/002_GWB_v6_Resequencing-PA.pptx">Slides 2</a></li>
+</ul></div>
             
         </div>
 
