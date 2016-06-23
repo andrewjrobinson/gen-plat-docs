@@ -1,19 +1,65 @@
-Items that must be included as a minimum in archived data (metadata.txt)
+# PROJECTNAME
 
-Contacts: Phone, email addresses, department of:
-Primary: the researchers who created the results/performed research.
-Supervisor/lab group:
-Collaborators: Internal and external
-Approvals:
-Incoming: A list of approvals that were received by you for use of external data if any. (attach email text if coming via email, best for forward the email then copy all text so it includes the from/to fields)
-Outgoing: A list of approvals that you have given out for other copies of this research data including contact details and names of persons and for what purpose they were given.
-Confidentiality/Ethics restrictions:
-Are there any restrictions on the confidentiality of all or parts of this data.  Which parts if any can be given out to others if a request comes from publication?
-Expiry:
-What date should this data be deleted (See section 2.1.1 of r39 of the “AUSTRALIAN CODE FOR THE RESPONSIBLE CONDUCT OF RESEARCH”) for timeframes required.
-Who is responsible for the disposal
+A short summary of what PROJECTNAME was about.
+
+## Contacts
+
+People involved in this project such as: Primary researcher(s), Supervisor(s), Collaborator(s), People who gave you data etc.
+
+### CONTACTNAME1
+
+**Role**: XXXXX
+**Phone**: XXXXXX
+**Email**: XXX@XXX.edu.au
+**Department**: XXXXX
+
+...
+
+## Approvals
+
+A list of approvals that are related to this project.  These would include both incoming (people giving you approval 
+to something) or outgoing (people you gave access to something).  You should save the email 
+
+### Approval 1
+
+**Type**: INCOMING | OUTGOING
+**Party**: the person/organisation who gives/gets approval
+**Purpose**: what you/they can use it for
+**Part**: which part of the data it applies to
+
+...
+
+## Confidentiality/Ethics restrictions
+
+Any restrictions on the confidentiality of all or parts of this data.  Which parts if any can be given out to others if 
+a request comes from publication?
+
+* Description on confidentiality/Ethics restruction 1
+* ...
+
+## Expiry
+
+See section 2.1.1 of r39 of the "AUSTRALIAN CODE FOR THE RESPONSIBLE CONDUCT OF RESEARCH" for timeframes required.
+
+**Date**: What date should this data kept until (minimum)
+**Person**: Who is responsible for checking it data is still needed and setting new expiration if not deleted.  This person
+            should be included in Contacts section 
+
+### Notes
+
 Note any challenges or allegations of research misconduct that are raised against this research.
-References:
+
+## References
+
 Labbooks and other documentation that describes the data processing and/or wet lab work associated with this data.
-Publications:
+
+* Reference 1
+* ...
+
+## Publications
+
 Citation and doi/url for any publications that are a result of this data
+
+* PUBLICATION CITATION 1
+* ...
+
