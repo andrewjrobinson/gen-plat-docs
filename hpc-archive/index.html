@@ -263,11 +263,12 @@ is to use the <em>rsync</em> command.  e.g.</p>
 #SBATCH --partition=compute
 #SBATCH --time=2-0
 
-# make sure destination directory exists
-mkdir -p /home/archive/LABGROUP/pub/PROJECT_DIR_NAME
+echo &quot;Starting: $(date)&quot;
 
 # perform copy
-rsync -avP PROJECT_DIR_NAME /home/archive/LABGROUP/pub/PROJECT_DIR_NAME
+rsync -avP PROJECT_DIR_NAME /home/archive/LABGROUP/pub/
+
+echo &quot;Finished: $(date)&quot;
 </code></pre>
 
 <p>The manpage description of the <em>-avP</em> flags are:</p>
