@@ -15,7 +15,10 @@
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../includes/media/mdx_showable.css" rel="stylesheet">
+        <link href="../includes/media/mdx_showable_user.css" rel="stylesheet">
         <link href="../includes/media/plain-slides.css" rel="stylesheet">
+        <link href="../includes/media/tute.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -65,6 +68,12 @@
                         <ul class="dropdown-menu">
                         
                             
+<li >
+    <a href="../hpc-access/">HPC Access</a>
+</li>
+
+                        
+                            
 <li class="active">
     <a href="./">HPC Archiving</a>
 </li>
@@ -97,7 +106,7 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="..">
+                        <a rel="next" href="../hpc-access/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
@@ -249,7 +258,7 @@ be completed. </p>
 <p>All FASTQ/A files should be compressed as do any other large text files.  When you compress a text file that wasn't compressed when 
 you ran pipeline make sure you document that it was done in a README file so that you remember to decompress it if you need to 
 perform processing again.</p>
-<h3 id="transfering">Transfering</h3>
+<h3 id="transferring">Transferring</h3>
 <p>You should transfer the prepared project by 'copying' it rather then 'moving' it; the archive storage is on a separate filesystem
 so there is no speed advantage by 'moving' it.  Worse, if the transfer fails part way through the 'move', it is much harder to 
 continue afterwards.</p>
@@ -368,6 +377,8 @@ pressing <em>CTRL + C</em> to terminate the command). </p>
         <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
         <script src="../js/base.js"></script>
         <script src="../includes/remark-latest.min.js"></script>
+        <script src="../includes/media/delayed-jquery.js"></script>
+        <script src="../includes/media/mdx_showable.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
             <div class="modal-dialog">
