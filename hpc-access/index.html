@@ -133,6 +133,8 @@
         
             <li><a href="#transfer-files">Transfer files</a></li>
         
+            <li><a href="#adding-the-hpc-to-your-file-browser">Adding the HPC to your file browser</a></li>
+        
     
     </ul>
 </div></div>
@@ -170,7 +172,7 @@ Unix commands and thus begin using the remote computer.</p>
 </div>
 </div>
 </div>
-<script>(function(w,d,u){w.readyQ=[];w.bindReadyQ=[];function p(x,y){if(x=="ready"){w.bindReadyQ.push(y);}else{w.readyQ.push(x);}};var a={ready:p,bind:p};w.$=w.jQuery=function(f){if(f===d||f===u){return a}else{p(f)}}})(window,document)</script>
+<script>(function(w,d,u){if(!w.$){w._delayed=true;console.info("Delaying JQuery calls");w.readyQ=[];w.bindReadyQ=[];function p(x,y){if(x=="ready"){w.bindReadyQ.push(y);}else{w.readyQ.push(x);}};var a={ready:p,bind:p};w.$=w.jQuery=function(f){if(f===d||f===u){return a}else{p(f)}}}})(window,document)</script>
 <script>
     $(document).ready(function(){
         $("#showablelink0").click(function(e){
@@ -330,6 +332,72 @@ not show in future if you want)</p>
         $("#showablelink3").click(function(e){
             e.preventDefault();
             $("#showable3").toggleClass("showable-hidden");
+        });
+    });
+    </script>
+<h2 id="adding-the-hpc-to-your-file-browser">Adding the HPC to your file browser</h2>
+<p>To avoid the command line and use the regular graphical user interface, you can add a LIMS-HPC folder to you file browser. Click the link below to expand the relevant instructions for your Operating System</p>
+<div class="showable-container information showable-hidden" id="showable4">
+<div class="showable-inner">
+<div class="showable-header information" id="showabletitle4"><a href="" id="showablelink4">Mac OS X</a></div>
+<div class="showable-body information" id="showablebody4">
+<p>Not available yet.</p>
+</div>
+</div>
+</div>
+<script>
+    $(document).ready(function(){
+        $("#showablelink4").click(function(e){
+            e.preventDefault();
+            $("#showable4").toggleClass("showable-hidden");
+        });
+    });
+    </script>
+<div class="showable-container information showable-hidden" id="showable5">
+<div class="showable-inner">
+<div class="showable-header information" id="showabletitle5"><a href="" id="showablelink5">Linux</a></div>
+<div class="showable-body information" id="showablebody5">
+<p>Open your regular file browser (Nautilus in Ubuntu). On the left-hand side at the bottom click <strong>Connect to server</strong>.</p>
+<p>Enter the following address: sftp://username@lims-hpc-latrobe.edu.au:6022/home/username, replacing username with your LIMS-HPC username.</p>
+<p>Click <strong>Connect</strong>.</p>
+<p>Enter your password when prompted, then you can navigate your files by clicking around.</p>
+</div>
+</div>
+</div>
+<script>
+    $(document).ready(function(){
+        $("#showablelink5").click(function(e){
+            e.preventDefault();
+            $("#showable5").toggleClass("showable-hidden");
+        });
+    });
+    </script>
+<div class="showable-container information showable-hidden" id="showable6">
+<div class="showable-inner">
+<div class="showable-header information" id="showabletitle6"><a href="" id="showablelink6">Windows</a></div>
+<div class="showable-body information" id="showablebody6">
+<p>Download <a href="http://www.swish-sftp.org/">Swish</a> and install.
+Open your file browser and navigate to <strong>Computer</strong> or <strong>This PC</strong> (Windows 10). You should see an icon named <strong>Swish</strong>. Double-click on it to open.
+On the top bar click <strong>Add sftp connection</strong>.</p>
+<ul>
+<li>Complete form fields<ul>
+<li><strong>Host name</strong>: lims-hpc-m.latrobe.edu.au</li>
+<li><strong>Port number</strong>: 6022</li>
+<li><strong>User name</strong>: Your LIMS-HPC username</li>
+<li><strong>Folder</strong>: /home/username</li>
+</ul>
+</li>
+<li>Click <strong>Connect</strong> button, and enter your LIMS-HPC password when prompted</li>
+</ul>
+<p>You can now navigate your files by clicking around.</p>
+</div>
+</div>
+</div>
+<script>
+    $(document).ready(function(){
+        $("#showablelink6").click(function(e){
+            e.preventDefault();
+            $("#showable6").toggleClass("showable-hidden");
         });
     });
     </script></div>
