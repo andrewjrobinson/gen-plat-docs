@@ -196,3 +196,46 @@ not show in future if you want)
 
 \endshowable
 
+## Adding the HPC to your file browser
+
+To avoid the command line and use the regular graphical user interface, you can add a LIMS-HPC folder to you file browser. Click the link below to expand the relevant instructions for your Operating System
+
+\showable{Mac OS X}{information}
+
+Not available yet.
+
+\endshowable
+
+
+\showable{Linux}{information}
+
+Open your regular file browser (Nautilus in Ubuntu). On the left-hand side at the bottom click **Connect to server**.
+
+Enter the following address: sftp://username@lims-hpc-latrobe.edu.au:6022/home/username, replacing username with your LIMS-HPC username.
+
+Click **Connect**.
+
+Enter your password when prompted, then you can navigate your files by clicking around.
+
+
+\endshowable
+
+
+\showable{Windows}{information}
+
+Download [Swish](http://www.swish-sftp.org/) and install.
+Open your file browser and navigate to **Computer** or **This PC** (Windows 10). You should see an icon named **Swish**. Double-click on it to open.
+On the top bar click **Add sftp connection**.
+
+* Complete form fields
+    * **Host name**: lims-hpc-m.latrobe.edu.au
+    * **Port number**: 6022
+    * **User name**: Your LIMS-HPC username
+    * **Folder**: /home/username
+* Click **Connect** button, and enter your LIMS-HPC password when prompted
+
+You can now navigate your files by clicking around.
+
+
+\endshowable
+
