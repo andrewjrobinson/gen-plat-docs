@@ -2,8 +2,10 @@ site_name: Genomics Platform Docs
 pages:
 - 'Home': 'index.md'
 - 'Documentation':
+  - 'HPC Access': 'hpc-access/index.md'
   - 'HPC Archiving': 'hpc-archive/index.md'
   - 'HPC Updates': 'hpc-update/index.md'
+- 'Support files': 'materials/index.md'
 extra_templates: [
 ]
 markdown_extensions: [

@@ -2,6 +2,7 @@
 
 ## Topics
 
-* **[HPC Archiving and Update Slides](hpc-archive/slides.html)**: Slides to go with the following documents
-* **[HPC Archiving](hpc-archive)**: usage of LIMS-HPC Archiving facilities ([Slides](slides.html))
-* **[HPC Updates](hpc-update)**: changes to LIMS-HPC usage ([Slides](hpc-update/slides.html))
+* **[HPC Access](hpc-access)**: login and file transfer to LIMS-HPC
+* **[HPC Archiving and Update Slides](slides.html)**: Slides to go with the following documents
+* **[HPC Archiving](hpc-archive)**: usage of LIMS-HPC Archiving facilities
+* **[HPC Updates](hpc-update)**: changes to LIMS-HPC usage

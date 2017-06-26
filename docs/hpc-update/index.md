@@ -64,7 +64,7 @@ echo "Finished: $(date)"
 
 Munin is a webpage that shows graphs CPU usage over time.  It can be accessed from the following webpage:
 
-http://munin-lims.latrobe.edu.au/lims-hpc.html
+[http://munin-lims.latrobe.edu.au/lims-hpc.html](http://munin-lims.latrobe.edu.au/lims-hpc.html)
 
 It is good for tracking how your job used the CPU over time however it only shows the whole node usage so 
 in some situations it is hard to tell who used what.
@@ -80,4 +80,4 @@ for more details on using top.  To setup node login see [LIMS-HPC Node Login Set
 
 ### Is it correct?
 
-Make sure you check your job is running correct when it starts and at regular intervals.
+Make sure you check your job is running correctly when it starts and at regular intervals.
