@@ -1,0 +1,3 @@
+mkdocs
+mdx_showable
+markdown-include
