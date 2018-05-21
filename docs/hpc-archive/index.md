@@ -11,9 +11,8 @@ records about such data.  La Trobe University's policies specifically reference 
 **Relevant Documents**:
 
 * [Australian Code for the Responsible Conduct of Research](https://www.nhmrc.gov.au/guidelines-publications/r39)
-* [La Trobe University Policies](http://www.latrobe.edu.au/policy/all-policies)
-* [La Trobe University Research Data Management Policy](http://www.latrobe.edu.au/policy/documents/research-data-management-policy.pdf)
-* [La Trobe University Research Data Retention and Disposal Policy](http://www.latrobe.edu.au/policy/documents/research-data-retention-and-disposal-policy.pdf)
+* [La Trobe University Policies](https://policies.latrobe.edu.au/)
+* [La Trobe University Research Data Management Policy](https://policies.latrobe.edu.au/document/view.php?id=106)
 
 ## Glossary
 
