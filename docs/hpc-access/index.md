@@ -3,6 +3,35 @@
 
 # HPC Access
 
+## Applying for an account
+
+**User** = task to be completed by LTU Staff/Student requiring access to LIMS-HPC.  **Lab-head** = task to be completed by the LTU lab-head for the lab which user belongs to.
+
+1.	**User** read archive documentation:
+	* [Archive Documentation](/hpc-archive)
+2.	**User** read, sign and give to supervisor archive access form:
+	* [Archive Access Form](/includes/media/vicnode-form.pdf)
+3.	**Lab-head** complete an AskICT "Unix Research Support" request (AskICT > Get Help > Research Support > Unix Research Support)
+	* [Unix Research Support Form](https://latrobe.service-now.com/ict?id=sc_cat_item&sys_id=da7e2d426f38a2846fbeda55eb3ee417&sysparm_category=db3688fc6f34e2403b34cd35eb3ee4d5)
+		* if User is a staff member select "Who requires this service?" = "Someone Else" and "Type their name in the "Select the staff member for this server box".  For students just leave it as "Yourself"
+	* Click "Add attachments" and select the Archive Access Form provided by User
+	* Complete the "Description of request" using the template below and the following replacements:
+		* FIRSTNAME: user's first/given name
+		* NAME: full name of user
+		* USERNAME: if the user is a student then this must be their STUDENTS domain username.  Otherwise, their LTU domain username.
+		* EMAIL: the user's LTU/STUDENTS email address.  Optionally you can provide a second alternate email if they want. 
+		* LABGROUP: Lab-head's surname followed by "lab" e.g. smithlab
+
+```
+New LIMS-HPC user for FIRSTNAME
+
+Name: NAME
+Username: USERNAME
+Email: EMAIL
+Group: LABGROUP
+```
+
+
 ## Connecting
 
 Click the link below to expand the relevant instructions for your Operating System
