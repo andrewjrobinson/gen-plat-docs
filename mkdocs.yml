@@ -8,6 +8,17 @@ pages:
 - 'Support files': 'materials/index.md'
 extra_templates: [
 ]
+extra_javascript: [
+  'includes/remark-latest.min.js', 
+  'includes/media/delayed-jquery.js', 
+  'includes/media/mdx_showable.js'
+]
+extra_css: [
+  'includes/media/mdx_showable.css', 
+  'includes/media/mdx_showable_user.css', 
+#  'includes/media/plain-slides.css', 
+  'includes/media/tute.css'
+]
 markdown_extensions: [
   'markdown_include.include',
   'showable',
