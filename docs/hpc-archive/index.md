@@ -4,13 +4,13 @@ This document covers the usage of the Archiving Storage attached to LIMS-HPC.
 
 ## Purpose
 
-The [Australian Code for the Responsible Conduct of Research](https://www.nhmrc.gov.au/guidelines-publications/r39) 
+The [Australian Code for the Responsible Conduct of Research](https://www.nhmrc.gov.au/about-us/publications/australian-code-responsible-conduct-research-2018) 
 requires researchers to make use the archive storage at a research organisation (i.e. La Trobe University) and keep
 records about such data.  La Trobe University's policies specifically reference the Code.
 
 **Relevant Documents**:
 
-* [Australian Code for the Responsible Conduct of Research](https://www.nhmrc.gov.au/guidelines-publications/r39)
+* [Australian Code for the Responsible Conduct of Research](https://www.nhmrc.gov.au/about-us/publications/australian-code-responsible-conduct-research-2018)
 * [La Trobe University Policies](https://policies.latrobe.edu.au/)
 * [La Trobe University Research Data Management Policy](https://policies.latrobe.edu.au/document/view.php?id=106)
 
@@ -33,7 +33,7 @@ Key terms used within this document
 
 * **/home/USERNAME**: Home directory for the user USERNAME.  No data will be stored here; only config files
 * **/home/group/LABGROUP**: the directory for storing *active* projects of research group LABGROUP
-* **/home/archive/LABGROUP**: the directory for storing *inactive* projects of research group LABGROUP
+* **/home/group/LABGROUP/archive**: the directory for storing *inactive* projects of research group LABGROUP
 * **/data/genomics-archive**: each sequencing run is stored here.  Any files within here do NOT need to be archived.  If 
     you have sequencing runs from outside providers then you can have them stored here by contacting the 
     [Genomics Platform (genomics@latrobe.edu.au)](mailto:genomics@latrobe.edu.au)  
@@ -54,14 +54,14 @@ also be locked when ready.
 ### Shelved
 
 For projects that have been put on hold for the time being.  They can be brought back to the HPC storage (i.e. 
-/home/group/*) when work resumes.
+/home/group/*) when work resumes.  Intermediate files must also be removed prior to archiving.
 
 ## Archive directory layout
 
 Each labgroup's archive directory contains two sub-directories for the Published and Shelved data.
 
-* **/home/archive/LABGROUP/pub**: Research projects that result in published data are stored inside the *pub* directory
-* **/home/archive/LABGROUP/shelf**: Research projects that are temporarily shelved are stored inside the *shelf* directory
+* **/home/group/LABGROUP/archive/pub**: Research projects that result in published data are stored inside the *pub* directory
+* **/home/group/LABGROUP/archive/shelf**: Research projects that are temporarily shelved are stored inside the *shelf* directory
 
 ## Meta-data
 
@@ -120,7 +120,16 @@ perform processing again.
 
 ### Transferring
 
-You should transfer the prepared project by 'copying' it rather then 'moving' it; the archive storage is on a separate filesystem
+The Temporary archive folder in your lab-group is in the same file system as your lab-group so please use the *mv* command to move the project into your archive directory once it is prepared for archival.
+
+```sh
+# e.g.
+mv PROJECT_DIR_NAME /home/group/LABGROUP/archive/pub/
+# Where PROJECT_DIR_NAME is the top level directory for your project
+#       LABGROUP is the labgroup you belong to. e.g. smithlab
+```
+
+<!-- You should transfer the prepared project by 'copying' it rather then 'moving' it; the archive storage is on a separate filesystem
 so there is no speed advantage by 'moving' it.  Worse, if the transfer fails part way through the 'move', it is much harder to 
 continue afterwards.
 
@@ -164,7 +173,7 @@ The manpage description of the *-avP* flags are:
 ```
 
 Which can roughly be translated to *'make an exact copy of our project, resume if we have started before and tell us in 
-detail what was done'*
+detail what was done'* -->
 
 ## Data disposal
 

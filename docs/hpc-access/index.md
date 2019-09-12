@@ -11,9 +11,8 @@
 	* [Archive Documentation](/hpc-archive)
 2.	**User** to carefully read, sign and give to supervisor archive access form:
 	* [Archive Access Form](/includes/media/vicnode-form.pdf)
-3.	**Lab-head** to complete an AskICT "Unix Research Support" request (AskICT > Get Help > Research Support > Unix Research Support)
-	* [AskLaTrobe](https://latrobe.service-now.com/latrobe)
-		* if User is a staff member select "Who requires this service?" = "Someone Else" and "Type their name in the "Select the staff member for this server box".  For students just leave it as "Yourself"
+3.	**Lab-head** to complete an AskICT "Unix Research Support" request (Click AskICT > Get Help > Research Support > Unix Research Support) from [AskLaTrobe](https://latrobe.service-now.com/latrobe)
+	* if User is a staff member select "Who requires this service?" = "Someone Else" and "Type their name in the "Select the staff member for this server box".  For students just leave it as "Yourself"
 	* Click "Add attachments" and select the Archive Access Form provided by User
 	* Complete the "Description of request" using the template below and the following replacements:
 		* *FIRSTNAME*: user's first/given name
@@ -30,7 +29,7 @@ Username: USERNAME
 Email: EMAIL
 Group: LABGROUP
 ```
-
+**Figure**: Description of request template
 
 ## Connecting
 
