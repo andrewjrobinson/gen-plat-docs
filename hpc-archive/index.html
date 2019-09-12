@@ -10,89 +10,90 @@
         <link rel="shortcut icon" href="../img/favicon.ico">
         <title>HPC Archiving - Genomics Platform Docs</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../css/highlight.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
         <link href="../includes/media/mdx_showable.css" rel="stylesheet">
         <link href="../includes/media/mdx_showable_user.css" rel="stylesheet">
         <link href="../includes/media/tute.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="../js/jquery-1.10.2.min.js"></script>
-        <script src="../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../js/highlight.pack.js"></script> 
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+            <div class="container">
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="..">Genomics Platform Docs</a>
-        </div>
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">Genomics Platform Docs</a>
+                </div>
 
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                    <li >
-                        <a href="..">Home</a>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="..">Home</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
 <li >
     <a href="../hpc-access/">HPC Access</a>
 </li>
-                            
+                                    
 <li class="active">
     <a href="./">HPC Archiving</a>
 </li>
-                            
+                                    
 <li >
     <a href="../hpc-update/">HPC Updates</a>
 </li>
+                                </ul>
+                            </li>
+                            <li >
+                                <a href="../materials/">Support files</a>
+                            </li>
                         </ul>
-                    </li>
-                    <li >
-                        <a href="../materials/">Support files</a>
-                    </li>
-                </ul>
 
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                    <li >
-                        <a rel="next" href="../hpc-access/">
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="../hpc-update/">
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-            </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../hpc-access/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../hpc-update/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
@@ -114,12 +115,12 @@
 <h1 id="hpc-archiving">HPC Archiving</h1>
 <p>This document covers the usage of the Archiving Storage attached to LIMS-HPC.</p>
 <h2 id="purpose">Purpose</h2>
-<p>The <a href="https://www.nhmrc.gov.au/guidelines-publications/r39">Australian Code for the Responsible Conduct of Research</a> 
+<p>The <a href="https://www.nhmrc.gov.au/about-us/publications/australian-code-responsible-conduct-research-2018">Australian Code for the Responsible Conduct of Research</a> 
 requires researchers to make use the archive storage at a research organisation (i.e. La Trobe University) and keep
 records about such data.  La Trobe University's policies specifically reference the Code.</p>
 <p><strong>Relevant Documents</strong>:</p>
 <ul>
-<li><a href="https://www.nhmrc.gov.au/guidelines-publications/r39">Australian Code for the Responsible Conduct of Research</a></li>
+<li><a href="https://www.nhmrc.gov.au/about-us/publications/australian-code-responsible-conduct-research-2018">Australian Code for the Responsible Conduct of Research</a></li>
 <li><a href="https://policies.latrobe.edu.au/">La Trobe University Policies</a></li>
 <li><a href="https://policies.latrobe.edu.au/document/view.php?id=106">La Trobe University Research Data Management Policy</a></li>
 </ul>
@@ -140,7 +141,7 @@ records about such data.  La Trobe University's policies specifically reference 
 <ul>
 <li><strong>/home/USERNAME</strong>: Home directory for the user USERNAME.  No data will be stored here; only config files</li>
 <li><strong>/home/group/LABGROUP</strong>: the directory for storing <em>active</em> projects of research group LABGROUP</li>
-<li><strong>/home/archive/LABGROUP</strong>: the directory for storing <em>inactive</em> projects of research group LABGROUP</li>
+<li><strong>/home/group/LABGROUP/archive</strong>: the directory for storing <em>inactive</em> projects of research group LABGROUP</li>
 <li><strong>/data/genomics-archive</strong>: each sequencing run is stored here.  Any files within here do NOT need to be archived.  If 
     you have sequencing runs from outside providers then you can have them stored here by contacting the 
     <a href="mailto:genomics@latrobe.edu.au">Genomics Platform (genomics@latrobe.edu.au)</a>  </li>
@@ -156,12 +157,12 @@ sub-directory for each project is used for adding new files/information after th
 also be locked when ready.</p>
 <h3 id="shelved">Shelved</h3>
 <p>For projects that have been put on hold for the time being.  They can be brought back to the HPC storage (i.e. 
-/home/group/*) when work resumes.</p>
+/home/group/*) when work resumes.  Intermediate files must also be removed prior to archiving.</p>
 <h2 id="archive-directory-layout">Archive directory layout</h2>
 <p>Each labgroup's archive directory contains two sub-directories for the Published and Shelved data.</p>
 <ul>
-<li><strong>/home/archive/LABGROUP/pub</strong>: Research projects that result in published data are stored inside the <em>pub</em> directory</li>
-<li><strong>/home/archive/LABGROUP/shelf</strong>: Research projects that are temporarily shelved are stored inside the <em>shelf</em> directory</li>
+<li><strong>/home/group/LABGROUP/archive/pub</strong>: Research projects that result in published data are stored inside the <em>pub</em> directory</li>
+<li><strong>/home/group/LABGROUP/archive/shelf</strong>: Research projects that are temporarily shelved are stored inside the <em>shelf</em> directory</li>
 </ul>
 <h2 id="meta-data">Meta-data</h2>
 <p>Items that must be included as a minimum in archived data (metadata.txt)</p>
@@ -199,7 +200,7 @@ also be locked when ready.</p>
 </ul>
 </li>
 </ul>
-<p><strong><a href="./metadata.txt">metadata.txt</a></strong>: a template file to use for your projects metadata.txt</p>
+<p><strong><a href="metadata.txt">metadata.txt</a></strong>: a template file to use for your projects metadata.txt</p>
 <h2 id="what-to-keep">What to keep</h2>
 <p><img width="100%" src="../hpc-archive/process.png" />
 <em>Data-wise</em>, the code says you need to keep at least the raw input files, the output results and anything that is not possible to 
@@ -217,12 +218,22 @@ be completed. </p>
 you ran pipeline make sure you document that it was done in a README file so that you remember to decompress it if you need to 
 perform processing again.</p>
 <h3 id="transferring">Transferring</h3>
-<p>You should transfer the prepared project by 'copying' it rather then 'moving' it; the archive storage is on a separate filesystem
+<p>The Temporary archive folder in your lab-group is in the same file system as your lab-group so please use the <em>mv</em> command to move the project into your archive directory once it is prepared for archival.</p>
+<pre><code class="sh"># e.g.
+mv PROJECT_DIR_NAME /home/group/LABGROUP/archive/pub/
+# Where PROJECT_DIR_NAME is the top level directory for your project
+#       LABGROUP is the labgroup you belong to. e.g. smithlab
+</code></pre>
+
+<!-- You should transfer the prepared project by 'copying' it rather then 'moving' it; the archive storage is on a separate filesystem
 so there is no speed advantage by 'moving' it.  Worse, if the transfer fails part way through the 'move', it is much harder to 
-continue afterwards.</p>
-<p>Given that both the archive and computational storage are 'mounted' to the LIMS-HPC filesystem (i.e. you can access it by a regular 
-unix path), you could use the standard unix <em>cp</em> command however this is discouraged.  The most reliable (and best tool to recover)
-is to use the <em>rsync</em> command.  e.g.</p>
+continue afterwards.
+
+Given that both the archive and computational storage are 'mounted' to the LIMS-HPC filesystem (i.e. you can access it by a regular 
+unix path), you could use the standard unix *cp* command however this is discouraged.  The most reliable (and best tool to recover)
+is to use the *rsync* command.  e.g.
+
+
 <pre><code class="sh">#!/bin/bash
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
@@ -238,7 +249,10 @@ rsync -avP PROJECT_DIR_NAME /home/archive/LABGROUP/pub/
 echo &quot;Finished: $(date)&quot;
 </code></pre>
 
-<p>The manpage description of the <em>-avP</em> flags are:</p>
+
+The manpage description of the *-avP* flags are:
+
+
 <pre><code class="sh">        -a, --archive               archive mode; equals -rlptgoD (no -H,-A,-X)
         -r, --recursive             recurse into directories
         -l, --links                 copy symlinks as symlinks
@@ -255,8 +269,10 @@ echo &quot;Finished: $(date)&quot;
             --progress              show progress during transfer
 </code></pre>
 
-<p>Which can roughly be translated to <em>'make an exact copy of our project, resume if we have started before and tell us in 
-detail what was done'</em></p>
+
+Which can roughly be translated to *'make an exact copy of our project, resume if we have started before and tell us in 
+detail what was done'* -->
+
 <h2 id="data-disposal">Data disposal</h2>
 <p>Data must only be disposed of in accordance with the La Trobe <a href="http://www.latrobe.edu.au/policy/documents/research-data-retention-and-disposal-policy.pdf">Research Data Retention and Disposal 
 Policy</a> and any other relevant 
@@ -323,15 +339,17 @@ pressing <em>CTRL + C</em> to terminate the command). </p>
 
         <footer class="col-md-12">
             <hr>
-            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script>var base_url = '..';</script>
-        <script src="../js/base.js"></script>
-        <script src="../includes/remark-latest.min.js"></script>
-        <script src="../includes/media/delayed-jquery.js"></script>
-        <script src="../includes/media/mdx_showable.js"></script>
-        <script src="../search/require.js"></script>
-        <script src="../search/search.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../includes/remark-latest.min.js" defer></script>
+        <script src="../includes/media/delayed-jquery.js" defer></script>
+        <script src="../includes/media/mdx_showable.js" defer></script>
+        <script src="../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
@@ -347,7 +365,7 @@ pressing <em>CTRL + C</em> to terminate the command). </p>
                 </p>
                 <form role="form">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
                 <div id="mkdocs-search-results"></div>
@@ -373,19 +391,19 @@ pressing <em>CTRL + C</em> to terminate the command). </p>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><kbd>?</kbd></td>
+                    <td class="help shortcut"><kbd>?</kbd></td>
                     <td>Open this help</td>
                   </tr>
                   <tr>
-                    <td><kbd>&larr;</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td><kbd>&rarr;</kbd></td>
+                    <td class="next shortcut"><kbd>n</kbd></td>
                     <td>Next page</td>
                   </tr>
                   <tr>
-                    <td><kbd>s</kbd></td>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
                     <td>Search</td>
                   </tr>
                 </tbody>
@@ -396,7 +414,6 @@ pressing <em>CTRL + C</em> to terminate the command). </p>
         </div>
     </div>
 </div>
-
 
     </body>
 </html>

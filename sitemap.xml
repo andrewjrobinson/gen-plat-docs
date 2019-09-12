@@ -1,42 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
     <url>
-     <loc>/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-09-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
-     <loc>/hpc-access/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-09-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/hpc-archive/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-09-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/hpc-update/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-09-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
     <url>
-     <loc>/materials/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <loc>None</loc>
+     <lastmod>2019-09-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
 </urlset>
